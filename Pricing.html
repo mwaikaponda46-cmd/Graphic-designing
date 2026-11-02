@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Adiviking</title>
+    <link rel="stylesheet" href="graphicdesign.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo"><span class="logo-icon">A</span><span class="logo-text">Adiviking</span></a>
+            <nav class="nav" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="OurWork.html" class="nav-link">Our Work</a></li>
+                    <li><a href="Services.html" class="nav-link">Services</a></li>
+                    <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
+                    <li><a href="Pricing.html" class="nav-link active">Pricing</a></li>
+                    <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Pricing</h1>
+            <p>Transparent and fair pricing for every design service we offer.</p>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-grid" id="pricingGrid"></div>
+        </div>
+    </section>
+
+    <section class="pricing-note">
+        <div class="container">
+            <p><strong>Note:</strong> Prices shown are starting prices. Final cost depends on project complexity. Contact us for details.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><span class="logo-icon">A</span><span class="logo-text">Adiviking</span></a>
+                    <p>Creating visual experiences that inspire and convert.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:adivikingbulambo@gmail.com">adivikingbulambo@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+265990260096">+265 990 260 096</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Lilongwe Area 25, Zomba Chanco Chikanda</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://wa.me/265990260096" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/adivikingBulambo" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
+                        <a href="mailto:adivikingbulambo@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Adiviking. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+    <script>
+    const defaultPrices={
+        logo:{name:'Logo Design',icon:'fa-pen-nib',amount:'15,000',features:['3 initial concepts','2 rounds of revisions','Full color + black versions','Print & digital files','Source files included']},
+        branding:{name:'Brand Identity',icon:'fa-fingerprint',amount:'15,000',featured:true,features:['Logo + brand mark','Color palette & fonts','Brand guidelines PDF','Business card design','Social media kit']},
+        social:{name:'Social Media Graphics',icon:'fa-share-alt',amount:'15,000',features:['10 custom post designs','Story templates','Profile & cover design','Brand-consistent style','Editable templates']},
+        print:{name:'Posters & Flyers',icon:'fa-newspaper',amount:'15,000',features:['1 poster or flyer design','2 revision rounds','Print-ready files (A4 / A3)','Digital version included','Fast delivery available']},
+        cards:{name:'Business Cards',icon:'fa-id-card',amount:'15,000',features:['Front & back design','2 concepts to choose from','Print-ready high-res files','Matches your brand','Quick turnaround']},
+        banners:{name:'Banners & Brochures',icon:'fa-scroll',amount:'15,000',features:['Banner or brochure design','Up to 4-page brochure','Print-ready files','Digital version included','Professional layout']}
+    };
+    function loadPrices(){
+        const saved=JSON.parse(localStorage.getItem('adivikingPrices')||'{}');
+        const grid=document.getElementById('pricingGrid');
+        grid.innerHTML='';
+        ['logo','branding','social','print','cards','banners'].forEach(key=>{
+            const def=defaultPrices[key];
+            const amount=saved[key]||def.amount;
+            const featured=def.featured?' featured':'';
+            const badge=def.featured?'<div class="popular-badge">Most Popular</div>':'';
+            const features=def.features.map(f=>`<li>${f}</li>`).join('');
+            grid.innerHTML+=`<div class="price-card${featured}">${badge}<div class="price-header"><i class="fas ${def.icon}"></i><h3>${def.name}</h3></div><div class="price-amount"><span class="currency">MWK</span><span class="amount">${amount}</span><span class="period">starting</span></div><ul class="price-features">${features}</ul><a href="ContactUs.html" class="btn btn-primary">Get Started</a></div>`;
+        });
+    }
+    loadPrices();
+    </script>
+</body>
+</html>

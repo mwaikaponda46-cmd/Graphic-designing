@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Adiviking</title>
+    <link rel="stylesheet" href="graphicdesign.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .owner-placeholder {
+            width: 260px;
+            height: 260px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            border: 5px solid #f0f0f0;
+            background: none;
+        }
+        .owner-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .owner-name {
+            text-align: center;
+            font-weight: 600;
+            color: #111;
+            line-height: 1.4;
+        }
+        @media (max-width: 900px) {
+            .owner-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">A</span>
+                <span class="logo-text">Adiviking</span>
+            </a>
+            <nav class="nav" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="OurWork.html" class="nav-link">Our Work</a></li>
+                    <li><a href="Services.html" class="nav-link">Services</a></li>
+                    <li><a href="AboutUs.html" class="nav-link active">About Us</a></li>
+                    <li><a href="Pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>About Adiviking</h1>
+            <p>We are a creative design studio passionate about turning ideas into powerful visual experiences.</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Our Background in Design</h2>
+                    <p>
+                        Adiviking was founded with a simple belief: great design has the power to transform brands 
+                        and connect with people. What started as a passion for visual storytelling has grown into 
+                        a full-service graphic design studio.
+                    </p>
+                    <p>
+                        Over the years we have worked with startups, established businesses and creative individuals, 
+                        helping them build strong visual identities through logo design, brand systems, social media 
+                        graphics, print materials and more. Every project is approached with care, creativity and 
+                        a deep understanding of the client’s goals.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div class="owner-photo">
+                        <div class="owner-placeholder">
+                            <img src="Adiviking.jpeg" alt="Andrew Bulambo - Founder & Lead Designer">
+                        </div>
+                        <p class="owner-name">Andrew Bulambo<br>Founder & Lead Designer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>
+                        To create meaningful and memorable designs that help brands stand out, 
+                        communicate clearly and build lasting connections with their audience.
+                    </p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>
+                        To be a trusted design partner known for creativity, reliability and 
+                        results — helping businesses of all sizes grow through exceptional visual design.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Creativity</h3>
+                    <p>We approach every project with fresh ideas and original thinking to deliver designs that feel unique and inspiring.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Reliability</h3>
+                    <p>We deliver high-quality work on time, communicate clearly and keep our promises so you can trust the process.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-star"></i></div>
+                    <h3>Excellence</h3>
+                    <p>We pay attention to every detail and continuously refine our work until it meets the highest standard.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h3>Collaboration</h3>
+                    <p>We listen carefully to your ideas and work closely with you to create designs that truly represent your brand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">A</span>
+                        <span class="logo-text">Adiviking</span>
+                    </a>
+                    <p>Creating visual experiences that inspire and convert.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:adivikingbulambo@gmail.com">adivikingbulambo@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+265990260096">+265 990 260 096</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Lilongwe Area 25, Zomba Chanco Chikanda</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/265990260096" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/adivikingBulambo" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="mailto:adivikingbulambo@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Adiviking. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>

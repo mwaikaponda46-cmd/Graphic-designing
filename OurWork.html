@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work | Adiviking</title>
+    <link rel="stylesheet" href="graphicdesign.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .project-image {
+            height: 220px;
+            overflow: hidden;
+            background: #eee;
+        }
+        .project-image img,
+        .project-image video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+            grid-column: 1 / -1;
+        }
+        .empty-state i {
+            font-size: 3rem;
+            color: #ccc;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .admin-entry {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+        }
+        .admin-entry a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #111;
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .admin-entry a:hover { background: #ff4d4d; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">A</span>
+                <span class="logo-text">Adiviking</span>
+            </a>
+            <nav class="nav" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="OurWork.html" class="nav-link active">Our Work</a></li>
+                    <li><a href="Services.html" class="nav-link">Services</a></li>
+                    <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
+                    <li><a href="Pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="ContactUs.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Work</h1>
+            <p>Projects posted by Adiviking. New work appears here when the admin adds it.</p>
+        </div>
+    </section>
+
+    <section class="work-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="logo">Logo Design</button>
+                <button class="filter-btn" data-filter="branding">Brand Identity</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+                <button class="filter-btn" data-filter="print">Posters & Flyers</button>
+                <button class="filter-btn" data-filter="cards">Business Cards</button>
+                <button class="filter-btn" data-filter="banners">Banners & Brochures</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="container">
+            <!-- ONLY projects from Admin appear here. No sample images. -->
+            <div class="projects-grid" id="projectsGrid"></div>
+        </div>
+    </section>
+
+    <section class="work-cta">
+        <div class="container">
+            <h2>Like what you see?</h2>
+            <p>Let’s create something great together for your brand.</p>
+            <a href="ContactUs.html" class="btn btn-primary">Start a Project</a>
+        </div>
+    </section>
+
+    <div class="admin-entry">
+        <a href="admin.html"><i class="fas fa-lock"></i> Admin</a>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">A</span>
+                        <span class="logo-text">Adiviking</span>
+                    </a>
+                    <p>Creating visual experiences that inspire and convert.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:adivikingbulambo@gmail.com">adivikingbulambo@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+265990260096">+265 990 260 096</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Lilongwe Area 25, Zomba Chanco Chikanda</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://wa.me/265990260096" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/adivikingBulambo" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
+                        <a href="mailto:adivikingbulambo@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Adiviking. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+    <script>
+        const categoryLabels = {
+            logo: 'Logo Design',
+            branding: 'Brand Identity',
+            social: 'Social Media Graphics',
+            print: 'Posters & Flyers',
+            cards: 'Business Cards',
+            banners: 'Banners & Brochures'
+        };
+
+        function loadProjects() {
+            const grid = document.getElementById('projectsGrid');
+            const projects = JSON.parse(localStorage.getItem('adivikingProjects') || '[]');
+
+            grid.innerHTML = '';
+
+            if (projects.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-images"></i>
+                        <h3>No projects yet</h3>
+                        <p>When the admin posts new work, it will appear here.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            projects.forEach(function (p) {
+                const media = p.mediaType === 'video'
+                    ? `<video src="${p.mediaUrl}" controls style="width:100%;height:100%;object-fit:cover;"></video>`
+                    : `<img src="${p.mediaUrl}" alt="${p.title}">`;
+
+                const card = document.createElement('article');
+                card.className = 'project-card';
+                card.setAttribute('data-category', p.category);
+                card.innerHTML = `
+                    <div class="project-image">${media}</div>
+                    <div class="project-info">
+                        <span class="project-category">${categoryLabels[p.category] || p.category}</span>
+                        <h3>${p.title}</h3>
+                        <p>${p.description}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        loadProjects();
+    </script>
+</body>
+</html>
