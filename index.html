@@ -7,6 +7,33 @@
     <link rel="stylesheet" href="graphicdesign.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
+<script>
+(function () {
+    function initMenu() {
+        var btn = document.getElementById('menuToggle');
+        var nav = document.getElementById('navMenu');
+        if (!btn || !nav) return;
+        btn.onclick = function () {
+            nav.classList.toggle('active');
+            btn.classList.toggle('active');
+        };
+        var links = nav.querySelectorAll('.nav-link');
+        for (var i = 0; i < links.length; i++) {
+            links[i].onclick = function () {
+                nav.classList.remove('active');
+                btn.classList.remove('active');
+            };
+        }
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMenu);
+    } else {
+        initMenu();
+    }
+})();
+</script>
+
 <body>
 
     <header class="header">
